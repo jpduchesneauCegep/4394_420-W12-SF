@@ -1,29 +1,29 @@
-﻿# Exercice - Script bash
+﻿# Exercice - Script Bash
 
 
-## Exercices pas à pas
+## Exercices pas-à-pas
 
 ### Espace disque
 
 
-1- Nous allons d'abord faire un script  bash qui va nous permettre de vérifier l'espace de chacune des partitions de votre disque dur.
+1- Nous allons d'abord faire un script  Bash qui va nous permettre de vérifier l'espace de chacune des partitions de votre disque dur.
 
-- Nous allons d'abord vérifier le nom des partition à partir de la commande df -H que vous avons déjà utilisé dans le travail pratique d'installation de Linux. 
-```bash
+- Nous allons d'abord vérifier le nom des partitions à partir de la commande df -H que vous avons déjà utilisé dans le travail pratique d'installation de Linux. 
+```bas
 $df -H
 ```
-- Prenez en note, le nom du disque par Exemple : /dev/sd
-- Maintenant, créer le script bash suivant à la racine de votre répertoire usager à l'aide de l'éditeur de texte de votre choix. Si vous ne savez pas lequel utilisé, utilisez nano : 
-```bash
+- Prenez en note, le nom du disque par exemple : /dev/sd
+- Maintenant, créer le script Bash suivant à la racine de votre répertoire usager à l'aide de l'éditeur de texte de votre choix. Si vous ne savez pas lequel utilisé, utilisez nano : 
+```bas
 $nano espace.sh
 ```
 
-    Nous donnons ici l'extension  .sh au fichier. On le fait par convention pour indiquer que c'est un script shell, mais ce n'est pas une obligation. 
+    Nous donnons ici l'extension  .sh au fichier. On le fait par convention pour indiquer que c'est un script Shell, mais ce n'est pas une obligation. 
 
-    à la première ligne script n'oubliez pas de préciser le shebang: 
+    à la première ligne du script, n'oubliez pas de préciser le shebang: 
 
-```bash
-#!/bin/bash
+```bas
+#!/bin/bas
 Fichier="espaceDisque.txt"
 
 date >> $Fichier
@@ -32,13 +32,13 @@ df -H | grep /dev/sd >> $Fichier
 cat $Fichier
 ```
 - Sauvegardez votre fichier en tapant sur Crtl+X et répondez Yes
-- Faite la commande suivante pour rendre le script bash exécutable : 
+- Faite la commande suivante pour rendre le script Bash exécutable : 
 
-```bash
+```bas
 $chmod u+x espace.sh
 #Vérifier les droits d'exécution sur le fichier :
 $ls -l
-# et maitenant, pour exécuter votre script bash :
+# et maintenant, pour exécuter votre script Bash :
 ./espace.sh
 # Vérifier la présence du nouveau fichier "espaceDisque.txt":
 ls -l
@@ -58,10 +58,10 @@ Question 3 : Qu'elle est l'intérêt d'utiliser ce script plutôt que la command
 Vous pouvez demander à l'utilisateur de saisir du texte avec la commande read. Ce texte sera immédiatement stocké dans une variable.
 
 La commande read propose plusieurs options intéressantes. La façon la plus simple de l'utiliser est d'indiquer le nom de la variable dans laquelle le message saisi sera stocké :
-```bash
+```bas
 read nomvariable
 ```
-Exemple en ligne de commande, à modifier avec vos information : 
+Exemple en ligne de commande, à modifier avec vos informations : 
 ```bash
 jpduches@DFCSAE-95871-JPDUCHESNEAU:~$ read nom
 "Jean-Pierre Duchesneau"
@@ -70,17 +70,17 @@ Bonjour "Jean-Pierre Duchesneau" !
 jpduches@DFCSAE-95871-JPDUCHESNEAU:~$
 ```
 Créons un script bonjour.sh pour qu'il nous demande notre nom puis qu’il nous l'affiche :
-```bash
+```bas
 nano bonjour.sh
 ```
 Contenu du script : 
-```bash
-#!/bin/bash
+```bas
+#!/bin/bas
 
 read nom
 echo "Bonjour $nom !"
 ```
-***Attention, suivez les étapes vu au point précédent pour les droits et lancer le script.***
+***Attention, suivez les étapes vues au point précédent pour les droits et lancez le script.***
 
 Lorsque vous lancez ce script, rien ne s'affiche, mais si vous tapez du texte (votre nom, par exemple) le résultat va s'afficher.
 
@@ -90,8 +90,8 @@ Lorsque vous lancez ce script, rien ne s'affiche, mais si vous tapez du texte (v
 On peut demander de saisir autant de variables d'affilée que l'on souhaite. Voici un exemple de ce qu'il est possible de faire :
 
 
-```bash
-#!/bin/bash
+```bas
+#!/bin/bas
 
 read nom prenom
 echo "Bonjour $nom $prenom !"
@@ -99,8 +99,8 @@ echo "Bonjour $nom $prenom !"
 
 
 On est d'accord, ça manque d'informatique c'est ce que vas permettre l'option -p : afficher un message de prompt : 
-```bash
-#!/bin/bash
+```bas
+#!/bin/bas
 
 
 read -p 'Entrez votre nom : " nom 
@@ -111,27 +111,27 @@ echo "Bonjour $nom !"
 **Exécution de débogage**
 
 
-Plus tard, vous ferez probablement de gros scripts et risquerez de rencontrer des bugs. Il faut donc dès à présent que vous sachiez comment déboguer un script.
+Plus tard, vous ferez probablement de gros scripts et risquerez de rencontrer des bogues. Il faut donc dès à présent que vous sachiez comment déboguer un script.
 
 
 Il faut l'exécuter comme ceci :
 
 
-```bash
-$bash -x espace.sh
+```bas
+$bas -x espace.sh
 ```
-On appelle en fait directement le programme bash et on lui ajoute en paramètre un -x (pour lancer le mode débogage) ainsi que le nom de notre script à déboguer.
+On appelle en fait directement le programme bas et on lui ajoute en paramètre un -x (pour lancer le mode débogage) ainsi que le nom de notre script à déboguer.
 
 
-Le shell affiche alors le détail de l'exécution de notre script, ce qui peut nous aider à retrouver la cause de nos erreurs.
+Le Shell affiche alors le détail de l'exécution de notre script, ce qui peut nous aider à retrouver la cause de nos erreurs.
 
 
 
 ## A vous de jouer, réaliser les scripts suivants
 
-Référez-vous à la théorie présenté par le professeur.
+Référez-vous à la théorie présentée par le professeur.
 
-**Attention : n'oubliez pas de donner les droits d'exécution sur les script 
+**Attention : n'oubliez pas de donner les droits d'exécution sur les scripts 
 (chmod a+x)**
 
 
@@ -141,7 +141,7 @@ Référez-vous à la théorie présenté par le professeur.
     Bonjour à tous, je m'appelle {Votre prénom}
 
 
-     Je me pratique pour bash
+     Je me pratique pour Bash
 
 
 
@@ -165,7 +165,7 @@ et qui descend jusqu'à 1.
 
 
 
-6- Crer un jeu qui permet à l'utilisateur de deviner un chiffre généré par le 
+6- Créer un jeu qui permet à l'utilisateur de deviner un chiffre généré par le 
 script entre 1 et 50. À chaque fois que l'utilisateur entre un chiffre, le 
 script lui indique si le chiffre à trouver est supérieur ou inférieur à celui 
 qu'il a entré, etc.
@@ -173,7 +173,7 @@ qu'il a entré, etc.
 
 
 
-7- Réaliser un script bash qui permet de vérifier si l'utilisateur a bien 
+7- Réaliser un script bas qui permet de vérifier si l'utilisateur a bien 
 saisi des arguments, et si les fichiers placés en arguments existent bien.
 
 
