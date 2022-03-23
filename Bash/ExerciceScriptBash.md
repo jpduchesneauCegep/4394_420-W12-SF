@@ -9,12 +9,12 @@
 1- Nous allons d'abord faire un script  Bash qui va nous permettre de vérifier l'espace de chacune des partitions de votre disque dur.
 
 - Nous allons d'abord vérifier le nom des partitions à partir de la commande df -H que vous avons déjà utilisé dans le travail pratique d'installation de Linux. 
-```bas
+```bash
 $df -H
 ```
 - Prenez en note, le nom du disque par exemple : /dev/sd
 - Maintenant, créer le script Bash suivant à la racine de votre répertoire usager à l'aide de l'éditeur de texte de votre choix. Si vous ne savez pas lequel utilisé, utilisez nano : 
-```bas
+```bash
 $nano espace.sh
 ```
 
@@ -22,8 +22,8 @@ $nano espace.sh
 
     à la première ligne du script, n'oubliez pas de préciser le shebang: 
 
-```bas
-#!/bin/bas
+```bash
+#!/bin/bash
 Fichier="espaceDisque.txt"
 
 date >> $Fichier
@@ -34,7 +34,7 @@ cat $Fichier
 - Sauvegardez votre fichier en tapant sur Crtl+X et répondez Yes
 - Faite la commande suivante pour rendre le script Bash exécutable : 
 
-```bas
+```bash
 $chmod u+x espace.sh
 #Vérifier les droits d'exécution sur le fichier :
 $ls -l
@@ -58,7 +58,7 @@ Question 3 : Qu'elle est l'intérêt d'utiliser ce script plutôt que la command
 Vous pouvez demander à l'utilisateur de saisir du texte avec la commande read. Ce texte sera immédiatement stocké dans une variable.
 
 La commande read propose plusieurs options intéressantes. La façon la plus simple de l'utiliser est d'indiquer le nom de la variable dans laquelle le message saisi sera stocké :
-```bas
+```bash
 read nomvariable
 ```
 Exemple en ligne de commande, à modifier avec vos informations : 
@@ -70,12 +70,12 @@ Bonjour "Jean-Pierre Duchesneau" !
 jpduches@DFCSAE-95871-JPDUCHESNEAU:~$
 ```
 Créons un script bonjour.sh pour qu'il nous demande notre nom puis qu’il nous l'affiche :
-```bas
+```bash
 nano bonjour.sh
 ```
 Contenu du script : 
-```bas
-#!/bin/bas
+```bash
+#!/bin/bash
 
 read nom
 echo "Bonjour $nom !"
@@ -90,8 +90,8 @@ Lorsque vous lancez ce script, rien ne s'affiche, mais si vous tapez du texte (v
 On peut demander de saisir autant de variables d'affilée que l'on souhaite. Voici un exemple de ce qu'il est possible de faire :
 
 
-```bas
-#!/bin/bas
+```bash
+#!/bin/bash
 
 read nom prenom
 echo "Bonjour $nom $prenom !"
@@ -99,8 +99,8 @@ echo "Bonjour $nom $prenom !"
 
 
 On est d'accord, ça manque d'informatique c'est ce que vas permettre l'option -p : afficher un message de prompt : 
-```bas
-#!/bin/bas
+```bash
+#!/bin/bash
 
 
 read -p 'Entrez votre nom : " nom 
@@ -117,8 +117,8 @@ Plus tard, vous ferez probablement de gros scripts et risquerez de rencontrer de
 Il faut l'exécuter comme ceci :
 
 
-```bas
-$bas -x espace.sh
+```bash
+$bash -x espace.sh
 ```
 On appelle en fait directement le programme bas et on lui ajoute en paramètre un -x (pour lancer le mode débogage) ainsi que le nom de notre script à déboguer.
 
