@@ -1,6 +1,4 @@
-﻿# Exercice  - Script bash
-
-##Solutionnaire
+﻿# Exercice  - Script bash (Solutionnaire)
 
 ## Réaliser les scripts suivants
 
