@@ -1,6 +1,4 @@
-﻿# Exercice  - Script bash
-
-##Solutionnaire
+﻿# Exercice  - Script bash (Solutionnaire)
 
 ## Réaliser les scripts suivants
 
@@ -27,7 +25,7 @@ read -p "Taper votre nom svp ?" NAME
 #!/bin/bash
 read -p "Quel est ton nom : " NOM
 read -p "Donne-nous ton age : " AGE
-echo "Bonjour  $NOM, tu as $AGE ans!"
+echo "Bonjour  ${NOM}, tu as $AGE ans!"
 ```
 
 4- Réalisation un compteur  qui commencer au chiffre rentré par l'utilisateur et qui descend jusqu'à 1.
@@ -78,7 +76,7 @@ do
     then
         echo "Le chiffre est plus petit"
     fi
-done()[]
+done
 echo "Trouvé !! le chiffre etait: $NOMBRE"
 ```
 
@@ -144,4 +142,4 @@ function verifyUser {
 ```
 
 
-**Fin de l'exercice 8**
+**Fin de l'exercice **
