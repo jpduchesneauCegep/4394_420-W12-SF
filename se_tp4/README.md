@@ -1,4 +1,4 @@
 # SE_TP4
 
-Fichiers pour le travail pratique 4 installation de WAMP
+Fichiers pour le travail pratique 3 installation de WAMP
 - 
