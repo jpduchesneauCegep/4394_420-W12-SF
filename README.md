@@ -1,2 +1,2 @@
-# 4364_420-W12-SF
-Cours système d'exploitation hiver 2024
+# 4372_420-W12-SF
+Cours système d'exploitation automne 2024
